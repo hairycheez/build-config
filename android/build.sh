@@ -26,10 +26,10 @@ export BUILD_NUMBER=$( (date +%s%N ; echo $BUILD_UUID; hostname) | openssl sha1 
 
 echo "--- Syncing"
 
-cd lineage/android
+cd android/lineage
 rm -rf .repo/local_manifests/*
-if [ -f lineage/setup.sh ]; then
-    source lineage/setup.sh
+if [ -f android/lineage/setup.sh ]; then
+    source android/lineage/setup.sh
 fi
 yes | repo init -u https://github.com/lineageos/android.git -b ${VERSION}
 echo "Resetting build tree"
